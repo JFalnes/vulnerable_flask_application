@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Vulnerable Web Application</title>
+      <link rel= "stylesheet" type= "text/css" href="{{url_for('static', filename='styles/style.css')}}">
+   </head>
+   <body>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+         <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            </a>
+         </div>
+         <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+               <a href="{{ url_for('main.index') }}" class="navbar-item">
+               Home
+               </a>
+               <a href="{{ url_for('main.search') }}" class="navbar-item">
+               Search
+               </a>
+               <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">
+                  More
+                  </a>
+                  <div class="navbar-dropdown">
+                     <a href="{{ url_for('main.info') }}" class="navbar-item">
+                     Info
+                     </a>
+                     <hr class="navbar-divider">
+                     <a href="{{ url_for('main.cheatsheet') }}" class="navbar-item">
+                     Cheatsheet
+                     </a>
+                  </div>
+               </div>
+               <div class="navbar-item">
+                  <form method="POST" action="/search">
+                     <div class="field has-addons">
+                        <div class="control">
+                           <input class="input is-info is-rounded" type="search" name="search" placeholder="Search for Wine, Tea, Pork...">
+                        </div>
+                        <div class="control">
+                           <a class="button is-info">
+                           Search
+                           </a>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+            {% if not current_user.is_authenticated %}
+            <div class="navbar-end">
+               <div class="navbar-item">
+                  <div class="buttons">
+                     <a href="{{ url_for('auth.signup_post') }}" class="button is-rounded is-primary"  >
+                     <strong>Sign up</strong>
+                     </a>
+                     <a href="{{ url_for('auth.login_post') }}" class="button is-light is-rounded">
+                     Log in
+                     </a>
+                  </div>
+               </div>
+            </div>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <div class="navbar-end">
+               <div class="navbar-item">
+                  <div class="buttons">
+                     <a href="{{ url_for('main.profile') }}" class="button is-rounded is-primary" >
+                     <strong>Profile</strong>
+                     </a>
+                     <a href="{{ url_for('auth.logout') }}" class="button is-light is-rounded">
+                     Logout
+                     </a>
+                  </div>
+               </div>
+            </div>
+            {% endif %}
+         </div>
+      </nav>
+      <section class="hero is-primary is-fullheight ">
+         <div class="hero-body">
+            <div class="container has-text-centered">
+               {% block content %}
+               {% endblock %}
+            </div>
+         </div>
+      </section>
+      <section class="hero is-info">
+         <div class="content has-text-centered">
+            <p>
+               <strong><a href="{{ url_for('main.disclaimer') }}">Disclaimer.</a></strong>
+            </p>
+         </div>
+      </section>
+   </body>
+</html>

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+{% if item_no %}
+<h1 class="title">Search Results</h1>
+<table class="table is-gapless is-fullwidth has-background-primary-dark">
+   <thead>
+      <tr>
+         <th class="has-text-white">Item number</th>
+         <th class="has-text-white">Item name</th>
+         <th class="has-text-white">Quantity</th>
+         <th class="has-text-white">Price</th>
+      </tr>
+      {% for i in range(0, len) %}
+      <tr  class="is-gapless has-text-white">
+         <td class="has-text-white">{{item_no[i]}}</td>
+         <td class="has-text-white">{{item_name[i]}}</td>
+         <td class="has-text-white">{{qty[i]}}</td>
+         <td class="has-text-white">{{price[i]}}</td>
+      </tr>
+      {%endfor%}
+      {% else %}
+      <h1 class="title">No Matching Results!</h1>
+      {% endif %}
+   </thead>
+</table>
+{% endblock %}

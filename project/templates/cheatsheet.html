@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="title is-1">
+   Cheatsheet!
+</h1>
+<article class="message is-primary is-large">
+   <div class="message-header">
+      <p>1. SQL Injection - Easy</p>
+   </div>
+   <div class="message-body">
+      This website is vulnerable to SQL Injection via the search bar. <a target="_blank" href=https://owasp.org/www-community/attacks/SQL_Injection>HINT</a>
+   </div>
+</article>
+<article class="message is-primary is-large">
+   <div class="message-header">
+      <p>2. Broken Authentication - Medium</p>
+   </div>
+   <div class="message-body">
+      This website does not have any form of account lockout policy. This means that a login can be attempted as
+      many times as you want. <a target="_blank" href=https://attack.mitre.org/techniques/T1110/004/>HINT</a>
+   </div>
+</article>
+<article class="message is-primary is-large">
+   <div class="message-header">
+      <p>3. Bad Password Handling - Hard</p>
+   </div>
+   <div class="message-body">A sort of broken authentication. The web application has an unusual way of handling passwords,
+      this can make it easier to guess credentials or brute force passwords. <a target="_blank" href=https://attack.mitre.org/techniques/T1110/004/>HINT</a>
+   </div>
+</article>
+{% endblock %}
