@@ -11,8 +11,8 @@ class User(UserMixin, db.Model):
     name = db.Column(db.String(1000))
 
 
-class Food_Items(db.Model):
+class Products(db.Model):
     item_no = db.Column(db.Integer, primary_key=True)  # primary keys are required by SQLAlchemy
     item_name = db.Column(db.String(100))
     qty = db.Column(db.Integer)
-    desc = db.Column(db.String(1000))
+    price = db.Column(db.String(1000))
