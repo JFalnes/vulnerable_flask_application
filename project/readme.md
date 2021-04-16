@@ -12,17 +12,17 @@ Should work on both Windows and Linux (Ubuntu 18.04), with some minor tweaking
 * pip install -r requirements.txt
 * Create database
 ```sql
-CREATE TABLE "user" (
-	"id"	INTEGER,
-	"email"	VARCHAR(50),
-	"password"	VARCHAR(50),
-	"name"	VARCHAR(50),
+CREATE TABLE user (
+	id	INTEGER,
+	email	VARCHAR(50),
+	password	VARCHAR(50),
+	name	VARCHAR(50),
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
 ```
 
 ```sql
-CREATE TABLE "products" (
+CREATE TABLE products (
 	id INT,
 	item_name VARCHAR(50),
 	qty INT,
