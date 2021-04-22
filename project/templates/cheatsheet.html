@@ -13,11 +13,19 @@
 </article>
 <article class="message is-primary is-large">
    <div class="message-header">
-      <p>2. Broken Authentication - Medium</p>
+      <p>2. Broken Access Control - Medium</p>
    </div>
    <div class="message-body">
       This website does not have any form of account lockout policy. This means that a login can be attempted as
       many times as you want. <a target="_blank" href=https://attack.mitre.org/techniques/T1110/004/>HINT</a>
+   </div>
+</article>
+<article class="message is-primary is-large">
+   <div class="message-header">
+      <p>3. Bad Password Handling/Security Misconfiguration - Hard</p>
+   </div>
+   <div class="message-body">A sort of broken authentication. The web application has an unusual way of handling passwords,
+      this can make it easier to guess credentials or brute force passwords. <a target="_blank" href=https://attack.mitre.org/techniques/T1110/004/>HINT</a>
    </div>
 </article>
 {% endblock %}

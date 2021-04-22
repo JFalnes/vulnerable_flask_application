@@ -8,9 +8,10 @@ Originally designed as a Final Year Project for my BSc.
 
 
 ## Installation
-Should work on both Windows and Linux (Ubuntu 18.04), with some minor tweaking
+Should work on both Windows and Linux (Ubuntu 18.04), with some minor tweaking to fit your system
 * pip install -r requirements.txt
 * Create database
+* IMPORTANT: Put it in project folder. Ex: flask_auth_app/project/db.sqlite
 ```sql
 CREATE TABLE user (
 	id	INTEGER,
@@ -35,4 +36,5 @@ CREATE TABLE products (
 * flask run
 
 ##LICENSE
+
 [MIT](https://github.com/JFalnes/vulnerable_flask_application/blob/master/LICENSE)
