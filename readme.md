@@ -35,6 +35,6 @@ CREATE TABLE products (
 * export FLASK_APP={Path/to/your/project}
 * flask run
 
-##LICENSE
+## LICENSE
 
 [MIT](https://github.com/JFalnes/vulnerable_flask_application/blob/master/LICENSE)
