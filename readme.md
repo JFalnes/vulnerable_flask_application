@@ -24,7 +24,7 @@ CREATE TABLE user (
 
 ```sql
 CREATE TABLE products (
-	id INT,
+	item_no INT,
 	item_name VARCHAR(50),
 	qty INT,
 	price VARCHAR(50)
