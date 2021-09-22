@@ -14,20 +14,20 @@ Should work on both Windows and Linux (Ubuntu 18.04), with some minor tweaking t
 * IMPORTANT: Put it in project folder. Ex: flask_auth_app/project/db.sqlite
 ```sql
 CREATE TABLE user (
-	id	INTEGER,
-	email	VARCHAR(50),
+	id		INTEGER,
+	email		VARCHAR(50),
 	password	VARCHAR(50),
-	name	VARCHAR(50),
+	name		VARCHAR(50),
 	PRIMARY KEY(id AUTOINCREMENT)
 );
 ```
 
 ```sql
 CREATE TABLE products (
-	item_no INT,
-	item_name VARCHAR(50),
-	qty INT,
-	price VARCHAR(50)
+	item_no 	INT,
+	item_name 	VARCHAR(50),
+	qty 		INT,
+	price 		VARCHAR(50)
 );
 ```
 * Code is written for SQLite 3, your mileage may vary using other databases
